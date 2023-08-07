@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Layout, Menu, theme } from "antd";
 import { Outlet, useLocation, useNavigate } from "react-router";
 import type { MenuProps } from "antd";
@@ -66,7 +66,10 @@ const AdminLayout = () => {
                             background: colorBgContainer,
                         }}
                     >
-                        <Outlet />
+                        <Suspense fallback={<div>Loading...</div>}>
+                            {" "}
+                            <Outlet />
+                        </Suspense>
                     </div>
                 </Content>
             </Layout>
