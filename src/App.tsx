@@ -1,5 +1,5 @@
 import React, { Suspense } from "react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { BrowserRouter } from "react-router-dom";
 import { ROUTE } from "./constants/routes";
 
@@ -14,7 +14,11 @@ function App() {
         <Suspense fallback={<div>Loading...</div>}>
             <BrowserRouter>
                 <Routes>
-                    <Route path={ROUTE.ROOT} element={<AdminLayout />}>
+                    <Route element={<AdminLayout />}>
+                        <Route
+                            path={ROUTE.ROOT}
+                            element={<Navigate to={ROUTE.PRODUCTS} />}
+                        />
                         <Route
                             path={ROUTE.PRODUCTS}
                             element={<ProductPage />}
