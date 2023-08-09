@@ -11,12 +11,6 @@ export const productSlice = createSlice({
     name: 'product',
     initialState,
     reducers: {
-        // increment: (state) => {
-        //   state.value += 1
-        // },
-        // decrement: (state) => {
-        //   state.value -= 1
-        // },
         setProducts: (state, action: PayloadAction<IProduct[]>) => {
             state.products = action.payload;
         },
