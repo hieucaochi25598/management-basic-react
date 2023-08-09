@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 import { IProductSliceState } from '../types/model/product/ProductSliceStateModel';
+import { IProduct } from '../types/model/product/IProduct';
 
 const initialState: IProductSliceState = {
     products: [],
@@ -16,12 +17,12 @@ export const productSlice = createSlice({
         // decrement: (state) => {
         //   state.value -= 1
         // },
-        // incrementByAmount: (state, action: PayloadAction<number>) => {
-        //   state.value += action.payload
-        // },
+        setProducts: (state, action: PayloadAction<IProduct[]>) => {
+            state.products = action.payload;
+        },
     },
 });
 
-// export const { decrement } = counterSlice.actions
+export const { setProducts } = productSlice.actions;
 
 export default productSlice.reducer;
