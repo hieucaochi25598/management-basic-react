@@ -1,13 +1,13 @@
-import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
-import { BrowserRouter } from "react-router-dom";
-import { ROUTE } from "./constants/routes";
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
+import { ROUTE } from './constants/routes';
 
 const AdminLayout = React.lazy(
-    () => import("./layouts/AdminLayout/AdminLayout")
+    () => import('./layouts/AdminLayout/AdminLayout')
 );
-const ProductPage = React.lazy(() => import("./pages/ProductPage/ProductPage"));
-const UserPage = React.lazy(() => import("./pages/UserPage/UserPage"));
+const ProductPage = React.lazy(() => import('./pages/ProductPage/ProductPage'));
+const UserPage = React.lazy(() => import('./pages/UserPage/UserPage'));
 
 function App() {
     return (

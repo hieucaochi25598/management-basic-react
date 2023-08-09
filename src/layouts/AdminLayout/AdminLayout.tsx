@@ -1,20 +1,20 @@
-import React, { Suspense } from "react";
-import { Layout, Menu, theme } from "antd";
-import { Outlet, useLocation, useNavigate } from "react-router";
-import type { MenuProps } from "antd";
-import { CodeSandboxOutlined, UserOutlined } from "@ant-design/icons";
-import { ROUTE } from "../../constants/routes";
-import "./AdminLayout.scss";
+import React, { Suspense } from 'react';
+import { Layout, Menu, theme } from 'antd';
+import { Outlet, useLocation, useNavigate } from 'react-router';
+import type { MenuProps } from 'antd';
+import { CodeSandboxOutlined, UserOutlined } from '@ant-design/icons';
+import { ROUTE } from '../../constants/routes';
+import './AdminLayout.scss';
 
 const { Content, Sider } = Layout;
-type MenuItem = Required<MenuProps>["items"][number];
+type MenuItem = Required<MenuProps>['items'][number];
 
 function getItem(
     label: React.ReactNode,
     key?: React.Key | null,
     icon?: React.ReactNode,
     children?: MenuItem[],
-    type?: "group"
+    type?: 'group'
 ): MenuItem {
     return {
         key,
@@ -26,8 +26,8 @@ function getItem(
 }
 
 const items: MenuItem[] = [
-    getItem("Product", ROUTE.PRODUCTS, <CodeSandboxOutlined />),
-    getItem("User", ROUTE.USERS, <UserOutlined />),
+    getItem('Product', ROUTE.PRODUCTS, <CodeSandboxOutlined />),
+    getItem('User', ROUTE.USERS, <UserOutlined />),
 ];
 
 const AdminLayout = () => {
@@ -58,16 +58,16 @@ const AdminLayout = () => {
                 />
             </Sider>
             <Layout>
-                <Content style={{ margin: "10px 10px" }}>
+                <Content style={{ margin: '10px 10px' }}>
                     <div
                         style={{
                             padding: 24,
-                            height: "100vh",
+                            height: '100vh',
                             background: colorBgContainer,
                         }}
                     >
                         <Suspense fallback={<div>Loading...</div>}>
-                            {" "}
+                            {' '}
                             <Outlet />
                         </Suspense>
                     </div>

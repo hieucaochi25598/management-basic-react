@@ -1,5 +1,5 @@
 export const ROUTE = {
     ROOT: '/',
     PRODUCTS: '/products',
-    USERS: '/users'
-}
+    USERS: '/users',
+};
